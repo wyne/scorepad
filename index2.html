@@ -20,17 +20,10 @@
 
     .container {
         width: 80%;
+        padding-left: 10%;
+        padding-right: 10%;
         max-width: 1024px;
         margin: 0 auto;
-    }
-
-    h1 {
-        font-size: 3rem;
-        text-align: center;
-        margin: 0;
-        padding: 1rem;
-        color: #FFF;
-        text-shadow: 0 0 2px rgb(179, 125, 177), 0 0 5px rgb(208, 144, 205);
     }
 
     .hero-wrapper {
@@ -79,13 +72,60 @@
         top: 0;
     }
 
+
+
+    .app__logo-wrapper {
+        display: inline-block;
+        background-image: url("ios-mask-border-128.svg");
+        background-size: contain;
+        max-width: 50px;
+        max-height: 50px;
+        padding: 10px;
+        margin: 64px;
+        height: 100%;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+
+    .app__logo {
+        border-radius: 22.5%;
+        mask-image: url("ios-mask.svg");
+        mask-size: cover;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .app__name {
+        display: block;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1rem;
+        color: #FFF;
+        text-shadow: 0 0 2px rgb(179, 125, 177), 0 0 5px rgb(208, 144, 205);
+    }
+
+    @media (max-width: 768px) {
+        .app__name {
+            font-size: 2rem;
+        }
+    }
+
+
     /* Add more nth-child styles for additional images */
 </style>
 
 <body>
-    <header>
-        <h1>ScorePad with Rounds</h1>
-    </header>
+
+    <div class="container" style="text-align: center;">
+        <div class="app__logo-wrapper"> <img class="app__logo" src="content/image/ad2y3lzbqovi3bwjtsmg.png"
+                alt="ScorePad with Rounds">
+        </div>
+        <div class="app__name">
+            ScorePad with Rounds
+        </div>
+    </div>
 
     <div class="container">
         <div class="hero-wrapper">
