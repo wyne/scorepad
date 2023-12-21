@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+    <link rel="preload" href="assets/hero1-small.webp" as="image">
+    <link rel="preload" href="assets/hero2-small.webp" as="image">
+    <link rel="preload" href="assets/hero3-small.webp" as="image">
 </head>
 
 <style>
@@ -58,20 +61,21 @@
         width: 100%;
         max-width: 100%;
         height: auto;
-        animation: pulse 6s infinite ease-in-out;
+        animation: pulse 6s 10 ease-in-out;
+        will-change: transform;
     }
 
     @keyframes pulse {
         0% {
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
 
         50% {
-            transform: translateY(-10px);
+            transform: translate3d(0, -10px, 0);
         }
 
         100% {
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
 
@@ -224,9 +228,9 @@
 
     <div class="container">
         <div class="hero-wrapper">
-            <img src="assets/hero3.webp" alt="ScorePad with Rounds" class="hero">
-            <img src="assets/hero2.webp" alt="ScorePad with Rounds" class="hero">
-            <img src="assets/hero1.webp" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero3-small.webp" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero2-small.webp" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero1-small.webp" alt="ScorePad with Rounds" class="hero">
         </div>
     </div>
 
