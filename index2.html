@@ -8,18 +8,32 @@
 </head>
 
 <style>
+    html,
     body {
         margin: 0;
         padding: 0;
         font-size: 16px;
         font-family: sans-serif;
         letter-spacing: .15cqb;
+        line-height: 1.6;
         background: linear-gradient(to bottom, #172755, #0C1117);
         background-size: 100% 100vh;
         background-repeat: no-repeat;
         color: #CCC;
         min-height: 100vh;
         background-color: #0C1117;
+    }
+
+    @media (max-width: 768px) {
+        html {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        html {
+            font-size: 10px;
+        }
     }
 
     .container {
@@ -59,10 +73,7 @@
         padding: 20px;
     }
 
-    .edu-left {
-        padding: 20px;
-    }
-
+    .edu-left,
     .edu-right {
         padding: 20px;
         display: flex;
@@ -78,13 +89,12 @@
     }
 
     .edu-info h2 {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
     .edu img {
-        margin-top: 5rem;
         position: relative;
         width: 100%;
         max-width: 100%;
@@ -232,7 +242,6 @@
             </p>
         </div>
 
-
         <div class="edu">
             <div class="edu-left">
                 <img src="assets/addends.webp" alt="ScorePad with Rounds">
@@ -246,18 +255,23 @@
         </div>
 
         <div class="edu">
-            <img src="assets/edu2.webp" alt="ScorePad with Rounds" class="edu">
+            <div class="edu-left">
+                <div class="edu-info">
+                    <h2>Multiple Point Values</h2>
+                    <p>Assign tap and long press to different point values.</p>
+                </div>
+            </div>
+            <div class="edu-right">
+                <img src="assets/addends.webp" alt="ScorePad with Rounds">
+                </img>
+            </div>
+
         </div>
 
-        <div class="edu">
-            <img src="assets/edu1.webp" alt="ScorePad with Rounds" class="edu">
-        </div>
-    </div>
-
-    <footer>
-        <a href="#">Terms of Service</a> |
-        <a href="#">Privacy Policy</a>
-    </footer>
+        <footer>
+            <a href="#">Terms of Service</a> |
+            <a href="#">Privacy Policy</a>
+        </footer>
 
 </body>
 
