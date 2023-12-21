@@ -16,7 +16,7 @@
         font-family: sans-serif;
         letter-spacing: .15cqb;
         line-height: 1.6;
-        background: linear-gradient(to bottom, #172755, #0C1117);
+        background: linear-gradient(to bottom, #121d41, #0C1117);
         background-size: 100% 100vh;
         background-repeat: no-repeat;
         color: #CCC;
@@ -58,10 +58,22 @@
         width: 100%;
         max-width: 100%;
         height: auto;
-        transition: all 3s ease;
-        animation: pulse 4s infinite;
+        animation: pulse 6s infinite ease-in-out;
     }
 
+    @keyframes pulse {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
 
     .edu {
         position: relative;
@@ -99,20 +111,6 @@
         width: 100%;
         max-width: 100%;
         height: auto;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-10px);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
     }
 
     img.hero:nth-child(1) {
@@ -248,8 +246,8 @@
             </div>
             <div class="edu-right">
                 <div class="edu-info">
-                    <h2>Multiple Point Values</h2>
-                    <p>Assign tap and long press to different point values.</p>
+                    <h2>No Number Typing</h2>
+                    <p>Just tap the top to add points, and the bottom to subtract points.</p>
                 </div>
             </div>
         </div>
@@ -258,7 +256,7 @@
             <div class="edu-left">
                 <div class="edu-info">
                     <h2>Multiple Point Values</h2>
-                    <p>Assign tap and long press to different point values.</p>
+                    <p>Tap for one value, hold for another.</p>
                 </div>
             </div>
             <div class="edu-right">
