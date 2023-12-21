@@ -11,11 +11,15 @@
     body {
         margin: 0;
         padding: 0;
+        font-size: 16px;
         font-family: sans-serif;
-        background: linear-gradient(to bottom, #172755, #061117);
-        color: #000;
+        letter-spacing: .15cqb;
+        background: linear-gradient(to bottom, #172755, #0C1117);
+        background-size: 100% 100vh;
+        background-repeat: no-repeat;
+        color: #CCC;
         min-height: 100vh;
-        ;
+        background-color: #0C1117;
     }
 
     .container {
@@ -42,6 +46,49 @@
         height: auto;
         transition: all 3s ease;
         animation: pulse 4s infinite;
+    }
+
+
+    .edu {
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .edu-left {
+        padding: 20px;
+    }
+
+    .edu-right {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .edu-info {
+        background: hsla(0, 0%, 100%, .05);
+        border-radius: 12px;
+        float: right;
+        padding: 2rem;
+    }
+
+    .edu-info h2 {
+        font-size: 1.7rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .edu img {
+        margin-top: 5rem;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
     @keyframes pulse {
@@ -71,8 +118,6 @@
     img.hero:nth-child(3) {
         top: 0;
     }
-
-
 
     .app__logo-wrapper {
         display: inline-block;
@@ -106,10 +151,49 @@
         text-shadow: 0 0 2px rgb(179, 125, 177), 0 0 5px rgb(208, 144, 205);
     }
 
+    .author {
+        display: block;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.2);
+    }
+
+    .app__description {
+        display: block;
+        font-size: 1rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        color: rgba(255, 255, 255, .8);
+        border: 5px solid rgba(79, 100, 181, 0.7);
+        border-radius: 22px;
+        padding: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        background-color: rgba(17, 19, 44, 0.659);
+    }
+
     @media (max-width: 768px) {
         .app__name {
             font-size: 2rem;
         }
+    }
+
+    footer {
+        text-align: center;
+        color: #DDD;
+        padding: 3rem;
+    }
+
+    a {
+        color: #DDD;
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #FFF;
     }
 
 
@@ -125,16 +209,55 @@
         <div class="app__name">
             ScorePad with Rounds
         </div>
+        <div class="author">
+            by Justin Wyne
+        </div>
     </div>
 
     <div class="container">
         <div class="hero-wrapper">
-            <img src="assets/hero3.png" alt="ScorePad with Rounds" class="hero">
-            <img src="assets/hero2.png" alt="ScorePad with Rounds" class="hero">
-            <img src="assets/hero1.png" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero3.webp" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero2.webp" alt="ScorePad with Rounds" class="hero">
+            <img src="assets/hero1.webp" alt="ScorePad with Rounds" class="hero">
         </div>
     </div>
 
+    <div class="container">
+        <div class="app__description">
+            <h3>
+                Easy and beautiful score keeping for all platforms.
+            </h3>
+            <p>
+                Available on iOS, Android, and web.
+            </p>
+        </div>
+
+
+        <div class="edu">
+            <div class="edu-left">
+                <img src="assets/addends.webp" alt="ScorePad with Rounds">
+            </div>
+            <div class="edu-right">
+                <div class="edu-info">
+                    <h2>Multiple Point Values</h2>
+                    <p>Assign tap and long press to different point values.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="edu">
+            <img src="assets/edu2.webp" alt="ScorePad with Rounds" class="edu">
+        </div>
+
+        <div class="edu">
+            <img src="assets/edu1.webp" alt="ScorePad with Rounds" class="edu">
+        </div>
+    </div>
+
+    <footer>
+        <a href="#">Terms of Service</a> |
+        <a href="#">Privacy Policy</a>
+    </footer>
 
 </body>
 
