@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export PATH="/opt/homebrew/Cellar/webp/1.3.2/bin/:$PATH"
+
+for arg in "$@"
+do
+  echo "Input: $arg"
+
+  output=$(basename "$arg")
+  output="${output%.*}"
+  output="$output.webp"
+
+  cwebp $arg -o $output -resize 2048 0
+
+  echo $output
+done
+
