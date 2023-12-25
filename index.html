@@ -218,6 +218,15 @@
       color: #ddd;
       padding: 3rem;
     }
+    .footer__links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+    }
+    .footer__link {
+      margin-left: 32px;
+    }
 
     a {
       color: #ddd;
@@ -362,6 +371,22 @@
             <img src="assets/pwa-badge.png" alt="Go to website" />
           </a>
         </div>
+
+        <ul class="footer__links" style="font-size: 1rem">
+          <li class="footer__link">
+            <a href="privacy.html">Privacy Policy</a>
+          </li>
+          <li class="footer__link">
+            <a
+              href="https://github.com/wyne/scorepad-react-native"
+              targe="_blank"
+              >GitHub</a
+            >
+          </li>
+          <li class="footer__link">
+            <a href="mailto:scorepad@justinwyne.com">Support</a>
+          </li>
+        </ul>
       </div>
 
       <div class="edu edu-focus-left">
@@ -431,8 +456,19 @@
     </div>
 
     <footer>
-      <a href="#">Terms of Service</a> |
-      <a href="#">Privacy Policy</a>
+      <ul class="footer__links">
+        <li class="footer__link">
+          <a href="privacy.html">Privacy Policy</a>
+        </li>
+        <li class="footer__link">
+          <a href="https://github.com/wyne/scorepad-react-native" targe="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li class="footer__link">
+          <a href="mailto:scorepad@justinwyne.com">Support</a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
