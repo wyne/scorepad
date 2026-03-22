@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/justin/workspace/scorepad log --oneline -10)"
+    ]
+  }
+}
