@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ScorePad with Rounds</title>
-    <meta name="description" content="Free score-keeping app for board games, card games, and any competitive activity. Available on iOS, Android, and web." />
+    <meta
+      name="description"
+      content="Free score-keeping app for board games, card games, and any competitive activity. Available on iOS, Android, and web."
+    />
     <link rel="icon" href="assets/favicon.png" />
 
     <meta property="og:title" content="ScorePad with Rounds" />
-    <meta property="og:description" content="Free open-source score keeping app for iOS, Android, and web." />
+    <meta
+      property="og:description"
+      content="Free open-source score keeping app for iOS, Android, and web."
+    />
     <meta property="og:image" content="assets/google-store-small.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.scorepadapp.com" />
@@ -19,19 +25,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLTV2HGXR5"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YLTV2HGXR5"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag("js", new Date());
       gtag("config", "G-YLTV2HGXR5");
     </script>
 
     <style>
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
 
@@ -39,10 +55,16 @@
         scroll-behavior: smooth;
       }
 
-      html, body {
+      html,
+      body {
         margin: 0;
         padding: 0;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
         font-size: 16px;
         letter-spacing: 0.01rem;
         line-height: 1.6;
@@ -53,8 +75,16 @@
 
       body {
         background:
-          radial-gradient(ellipse at 70% 0%, rgba(76, 87, 160, 0.18) 0%, transparent 55%),
-          radial-gradient(ellipse at 20% 85%, rgba(30, 50, 110, 0.12) 0%, transparent 50%),
+          radial-gradient(
+            ellipse at 70% 0%,
+            rgba(76, 87, 160, 0.18) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 20% 85%,
+            rgba(30, 50, 110, 0.12) 0%,
+            transparent 50%
+          ),
           #0c1117;
       }
 
@@ -126,13 +156,26 @@
         will-change: transform;
       }
 
-      img.hero:nth-child(1) { top: 40%; animation-delay: 1s; }
-      img.hero:nth-child(2) { top: 20%; animation-delay: 0.5s; }
-      img.hero:nth-child(3) { top: 0; }
+      img.hero:nth-child(1) {
+        top: 40%;
+        animation-delay: 1s;
+      }
+      img.hero:nth-child(2) {
+        top: 20%;
+        animation-delay: 0.5s;
+      }
+      img.hero:nth-child(3) {
+        top: 0;
+      }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50%       { transform: translateY(-18px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-18px);
+        }
       }
 
       /* ── CTA ── */
@@ -166,12 +209,18 @@
 
       .app__button-play img,
       .app__button-ios img,
-      .app__button-web img { height: 46px; width: auto; }
+      .app__button-web img {
+        height: 46px;
+        width: auto;
+      }
 
       @media (max-width: 480px) {
         .app__button-play img,
         .app__button-ios img,
-        .app__button-web img { height: 33px; width: auto; }
+        .app__button-web img {
+          height: 33px;
+          width: auto;
+        }
       }
 
       /* ── Features ── */
@@ -193,7 +242,9 @@
         padding: 56px 0;
         opacity: 0;
         transform: translateY(24px);
-        transition: opacity 0.55s ease, transform 0.55s ease;
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
       }
 
       .edu.visible {
@@ -201,8 +252,12 @@
         transform: translateY(0);
       }
 
-      .edu-focus-right .edu-image { order: 2; }
-      .edu-focus-right .edu-info  { order: 1; }
+      .edu-focus-right .edu-image {
+        order: 2;
+      }
+      .edu-focus-right .edu-info {
+        order: 1;
+      }
 
       @media (max-width: 640px) {
         .edu {
@@ -211,8 +266,12 @@
           padding: 40px 0;
         }
         /* Image always on top when stacked */
-        .edu .edu-image { order: -1 !important; }
-        .edu .edu-info  { order: 1 !important; }
+        .edu .edu-image {
+          order: -1 !important;
+        }
+        .edu .edu-info {
+          order: 1 !important;
+        }
       }
 
       .edu-image img {
@@ -297,15 +356,20 @@
   </head>
 
   <body>
-
     <!-- Header -->
     <div class="container">
       <div class="header">
         <div class="app__logo-wrapper">
-          <img class="app__logo" src="assets/app-icon.webp" alt="ScorePad with Rounds app icon" />
+          <img
+            class="app__logo"
+            src="assets/app-icon.webp"
+            alt="ScorePad with Rounds app icon"
+          />
         </div>
         <span class="app__name">ScorePad with Rounds</span>
-        <span class="author">by <a href="https://www.justinwyne.com">Justin Wyne</a></span>
+        <span class="author"
+          >by <a href="https://www.justinwyne.com">Justin Wyne</a></span
+        >
       </div>
     </div>
 
@@ -314,7 +378,11 @@
       <div class="hero-wrapper">
         <img src="assets/hero3.webp" alt="" class="hero" aria-hidden="true" />
         <img src="assets/hero2.webp" alt="" class="hero" aria-hidden="true" />
-        <img src="assets/hero1.webp" alt="ScorePad app screenshot" class="hero" />
+        <img
+          src="assets/hero1.webp"
+          alt="ScorePad app screenshot"
+          class="hero"
+        />
       </div>
     </div>
 
@@ -322,25 +390,43 @@
     <div class="container">
       <div class="cta">
         <p class="cta__headline">Easy score keeping for all platforms.</p>
-        <p class="cta__sub">Free and open source &mdash; iOS, Android, and web.</p>
+        <p class="cta__sub">
+          Free and open source &mdash; iOS, Android, and web.
+        </p>
         <div class="app__buttons">
-          <a href="https://play.google.com/store/apps/details?id=com.wyne.scorepad"
-             class="app__button-play" target="_blank" rel="noopener noreferrer"
-             title="Get it on Google Play">
-            <img src="assets/google-play-badge.png" alt="Get it on Google Play" />
+          <a
+            href="https://play.google.com/store/apps/details?id=com.wyne.scorepad"
+            class="app__button-play"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Get it on Google Play"
+          >
+            <img
+              src="assets/google-play-badge.png"
+              alt="Get it on Google Play"
+            />
           </a>
-          <a href="https://apps.apple.com/us/app/scorepad-with-rounds/id1577906063?platform=iphone"
-             class="app__button-ios" target="_blank" rel="noopener noreferrer"
-             title="Download on the App Store">
+          <a
+            href="https://apps.apple.com/us/app/scorepad-with-rounds/id1577906063?platform=iphone"
+            class="app__button-ios"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Download on the App Store"
+          >
             <img src="assets/ios-badge.svg" alt="Download on the App Store" />
           </a>
-          <a href="https://wyne.github.io/scorepad-app/"
-             class="app__button-web" target="_blank" rel="noopener noreferrer"
-             title="Open the web app">
+          <a
+            href="https://wyne.github.io/scorepad-app/"
+            class="app__button-web"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open the web app"
+          >
             <img src="assets/pwa-badge.png" alt="Open web app" />
           </a>
         </div>
-        <script type="text/javascript"
+        <script
+          type="text/javascript"
           src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
           data-name="bmc-button"
           data-slug="wyne"
@@ -361,12 +447,19 @@
 
       <div class="edu edu-focus-left">
         <div class="edu-image">
-          <img src="assets/edu-board5.webp" alt="Score board view" loading="lazy" />
+          <img
+            src="assets/edu-board5.webp"
+            alt="Score board view"
+            loading="lazy"
+          />
         </div>
         <div class="edu-info">
           <div class="edu-badge">Scoring</div>
           <h2>No Number Typing</h2>
-          <p>Tap the top of a player's card to add points, the bottom to subtract. No keyboard required.</p>
+          <p>
+            Tap the top of a player's card to add points, the bottom to
+            subtract. No keyboard required.
+          </p>
         </div>
       </div>
 
@@ -374,12 +467,19 @@
 
       <div class="edu edu-focus-right">
         <div class="edu-image">
-          <img src="assets/edu-addend5.webp" alt="Point value settings" loading="lazy" />
+          <img
+            src="assets/edu-addend5.webp"
+            alt="Point value settings"
+            loading="lazy"
+          />
         </div>
         <div class="edu-info">
           <div class="edu-badge">Controls</div>
           <h2>Multiple Point Values</h2>
-          <p>Tap for one value, hold for another. Customize both to match your game.</p>
+          <p>
+            Tap for one value, hold for another. Customize both to match your
+            game.
+          </p>
         </div>
       </div>
 
@@ -387,12 +487,18 @@
 
       <div class="edu edu-focus-left">
         <div class="edu-image">
-          <img src="assets/edu-bottom5.webp" alt="Score history view" loading="lazy" />
+          <img
+            src="assets/edu-bottom5.webp"
+            alt="Score history view"
+            loading="lazy"
+          />
         </div>
         <div class="edu-info">
           <div class="edu-badge">History</div>
           <h2>Score History</h2>
-          <p>Pull up to see a full breakdown of each player's score per round.</p>
+          <p>
+            Pull up to see a full breakdown of each player's score per round.
+          </p>
         </div>
       </div>
 
@@ -400,12 +506,19 @@
 
       <div class="edu edu-focus-right">
         <div class="edu-image">
-          <img src="assets/edu-home.webp" alt="Games list view" loading="lazy" />
+          <img
+            src="assets/edu-home.webp"
+            alt="Games list view"
+            loading="lazy"
+          />
         </div>
         <div class="edu-info">
           <div class="edu-badge">Organization</div>
           <h2>Multiple Games</h2>
-          <p>Keep all your ongoing games in one place and switch between them instantly.</p>
+          <p>
+            Keep all your ongoing games in one place and switch between them
+            instantly.
+          </p>
         </div>
       </div>
 
@@ -413,23 +526,34 @@
 
       <div class="edu edu-focus-left">
         <div class="edu-image">
-          <img src="assets/edu-share.webp" alt="Share scores view" loading="lazy" />
+          <img
+            src="assets/edu-share.webp"
+            alt="Share scores view"
+            loading="lazy"
+          />
         </div>
         <div class="edu-info">
           <div class="edu-badge">Sharing</div>
           <h2>Share Results</h2>
-          <p>After the game, share the final scores with everyone as an image.</p>
+          <p>
+            After the game, share the final scores with everyone as an image.
+          </p>
         </div>
       </div>
-
-      <hr class="feature-divider" />
     </div>
 
     <!-- Footer -->
     <footer>
       <ul class="footer__links">
         <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="https://github.com/wyne/scorepad-react-native" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>
+          <a
+            href="https://github.com/wyne/scorepad-react-native"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </li>
         <li><a href="mailto:scorepad@justinwyne.com">Support</a></li>
       </ul>
       <p class="footer__copyright">&copy; 2026 Justin Wyne</p>
@@ -441,16 +565,15 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              entry.target.classList.add("visible");
               observer.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.12 }
+        { threshold: 0.12 },
       );
 
-      document.querySelectorAll('.edu').forEach((el) => observer.observe(el));
+      document.querySelectorAll(".edu").forEach((el) => observer.observe(el));
     </script>
-
   </body>
 </html>
