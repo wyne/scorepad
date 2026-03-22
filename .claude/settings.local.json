@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C /Users/justin/workspace/scorepad log --oneline -10)"
+      "Bash(git -C /Users/justin/workspace/scorepad log --oneline -10)",
+      "Bash(grep -o \"\"version\"\":\"\"[^\"\"]*\"\" /Users/justin/workspace/scorepad/assets/tobi.min.js)",
+      "Bash(grep -o v[0-9]+.[0-9]+.[0-9]+ /Users/justin/workspace/scorepad/assets/tobi.min.js)",
+      "Bash(grep -l 'tobi' /Users/justin/workspace/scorepad/*.html)",
+      "WebSearch",
+      "Bash(curl -sf \"https://cdn.jsdelivr.net/npm/@rqrauhvmra/tobi@1.9.2/dist/tobi.min.js\" -o /Users/justin/workspace/scorepad/assets/tobi.min.js)",
+      "Bash(curl -sf \"https://cdn.jsdelivr.net/npm/@rqrauhvmra/tobi@1.9.2/dist/tobi.min.css\" -o /Users/justin/workspace/scorepad/assets/tobi.css)",
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:registry.npmjs.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -sf \"https://raw.githubusercontent.com/midzer/tobii/production/dist/tobii.min.js\")",
+      "Bash(curl -sf \"https://raw.githubusercontent.com/midzer/tobii/production/dist/tobii.min.css\")"
     ]
   }
 }
