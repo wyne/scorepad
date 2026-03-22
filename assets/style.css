@@ -201,7 +201,6 @@ html[dir=rtl] .app__logo-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: -9.8px;
 }
 .app__buttons--mobile {
   display: none;
@@ -219,30 +218,24 @@ html[dir=rtl] .app__logo-wrapper {
     display: none;
   }
 }
-.app__button-play img {
-  width: 176.4px;
-}
-.app__button-ios img {
-  width: 140px;
+.app__button-play img,
+.app__button-ios img,
+.app__button-web img {
+  height: 46px;
+  width: auto;
 }
 .app__button-web {
   margin-left: 12px;
 }
-.app__button-web img {
-  width: 157px;
-}
 @media (max-width: 768px) {
-  .app__button-play img {
-    width: 126px;
-  }
-  .app__button-ios img {
-    width: 100px;
+  .app__button-play img,
+  .app__button-ios img,
+  .app__button-web img {
+    height: 33px;
+    width: auto;
   }
   .app__button-web {
     margin-left: 8px;
-  }
-  .app__button-web img {
-    width: 112px;
   }
 }
 .app__section-title {
