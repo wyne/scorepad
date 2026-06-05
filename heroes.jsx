@@ -48,7 +48,7 @@ function HeroSplit({ phone }){
           <h1 className="display hero-h1">Keep score<br/>with your<br/><span className="hl">thumb.</span></h1>
           <p className="hero-lead">Scorepad is the score keeper with <b>no typing</b>. Tap, swipe, or spin the dial to add points in any game — from family rummy to game-night tournaments.</p>
           <StoreBadges big/>
-          <div className="hero-note">Free · No account · Works offline</div>
+          <div className="hero-note">Free · No account · Works offline · <a href="#support" style={{color:'var(--yellow)', textDecoration:'none', fontWeight:800}}>☕ Support the project</a></div>
         </div>
         <div className="hero-art">
           <div className="hero-glow"></div>

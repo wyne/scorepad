@@ -15,7 +15,7 @@ function NavBar(){
         <div className="nav-links">
           <a href="#gestures">Gestures</a>
           <a href="#features">Features</a>
-          <a href="#support">☕ Support</a>
+          <a href="#">What's new</a>
         </div>
         <a className="btn btn-primary nav-cta" href="#get">Download</a>
       </div>
