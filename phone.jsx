@@ -57,7 +57,7 @@ function AppScreen({ name="Summer", prev=45, round="Round 16", step="STEP +1", t
         <div style={{ width:46, height:46, borderRadius:'50%', background:'#202021', display:'grid', placeItems:'center', color:'#fff', fontSize:22, fontWeight:800 }}>‹</div>
         <div style={{ display:'flex', alignItems:'center', gap:16 }}>
           <span style={{ color:'var(--blue)', fontSize:24, fontWeight:800 }}>←</span>
-          <span style={{ color:'#fff', fontSize:21, fontWeight:700 }}>{round}</span>
+          <span style={{ color:'#fff', fontSize:21, fontWeight:700, whiteSpace:'nowrap' }}>{round}</span>
           <span style={{ color:'var(--blue)', fontSize:24, fontWeight:800 }}>→</span>
         </div>
         <div style={{ height:42, padding:'0 12px', borderRadius:22, background:'#202021', display:'flex', alignItems:'center', gap:7, color:'#fff' }}>
@@ -138,7 +138,7 @@ function AppBoard(){
         <div style={{ width:46, height:46, borderRadius:'50%', background:'#202021', display:'grid', placeItems:'center', color:'#fff', fontSize:22, fontWeight:800 }}>‹</div>
         <div style={{ display:'flex', alignItems:'center', gap:16 }}>
           <span style={{ color:'var(--blue)', fontSize:24, fontWeight:800 }}>←</span>
-          <span style={{ color:'#fff', fontSize:21, fontWeight:700 }}>Round 16</span>
+          <span style={{ color:'#fff', fontSize:21, fontWeight:700, whiteSpace:'nowrap' }}>Round 16</span>
           <span style={{ color:'var(--blue)', fontSize:24, fontWeight:800 }}>→</span>
         </div>
         <div style={{ height:42, padding:'0 12px', borderRadius:22, background:'#202021', display:'flex', alignItems:'center', gap:7, color:'#fff' }}>
