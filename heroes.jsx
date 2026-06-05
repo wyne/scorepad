@@ -128,6 +128,8 @@ function HeroSplit({ phone }) {
           <div className="chip chip-2">Tap · Swipe · Spin</div>
           <div className="chip chip-3">Offline</div>
           <div className="chip chip-4">No ads</div>
+          <div className="chip chip-5">Dark mode</div>
+          <div className="chip chip-6">Light mode</div>
         </div>
       </div>
     </header>
