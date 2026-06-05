@@ -1,0 +1,100 @@
+/* ============ gesture demo cards ============ */
+.demo-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+}
+@media (max-width:920px){ .demo-grid{ grid-template-columns:1fr; max-width:420px; margin-inline:auto; } }
+
+.demo-card{
+  background:linear-gradient(180deg,#161616,#101010);
+  border:1.5px solid rgba(255,255,255,.07);
+  border-radius:var(--r-lg);
+  padding:22px 20px 24px;
+  display:flex; flex-direction:column;
+  position:relative; overflow:hidden;
+  transition:border-color .3s, transform .3s var(--ease);
+}
+.demo-card:hover{ border-color:rgba(245,200,0,.45); transform:translateY(-4px); }
+.demo-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.demo-tag{ font-family:var(--font-display); font-weight:900; font-size:1.5rem; color:var(--yellow); letter-spacing:-.01em; }
+.demo-new{ font-size:.62rem; font-weight:900; letter-spacing:.14em; color:#0c0c0d; background:var(--yellow); padding:5px 9px; border-radius:999px; }
+.demo-stage{
+  background:var(--yellow);
+  border-radius:var(--r-md);
+  padding:22px 18px;
+  flex:1 1 auto;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  position:relative; overflow:hidden; min-height:288px;
+  touch-action:none; user-select:none;
+}
+.demo-foot{ padding:18px 2px 0; }
+.demo-title{ font-family:var(--font-display); font-weight:800; font-size:1.18rem; color:var(--cream); }
+.demo-sub{ font-size:.92rem; color:var(--cream-dim); margin-top:5px; line-height:1.45; }
+
+/* score tile */
+.tile{ text-align:center; position:relative; }
+.tile-name{ font-family:var(--font-rounded); font-weight:900; font-size:1.5rem; color:#0c0c0d; }
+.tile-num{ font-family:var(--font-rounded); font-weight:900; font-size:4.6rem; line-height:.9; color:#0c0c0d; letter-spacing:-.03em; }
+.tile-num.pop{ animation:pop .35s var(--ease-back); }
+@keyframes pop{ 0%{transform:scale(1)} 40%{transform:scale(1.22)} 100%{transform:scale(1)} }
+.tile-cap{ font-size:.66rem; font-weight:800; letter-spacing:.16em; color:var(--gold-muted); }
+
+.floaters{ position:absolute; inset:0; pointer-events:none; }
+.floater{ position:absolute; top:46%; transform:translateX(-50%); font-family:var(--font-rounded); font-weight:900; font-size:1.8rem; animation:floatUp .85s var(--ease) forwards; }
+@keyframes floatUp{ 0%{opacity:0; transform:translate(-50%,10px) scale(.8)} 20%{opacity:1} 100%{opacity:0; transform:translate(-50%,-58px) scale(1.1)} }
+
+/* tap tile — top half adds, bottom half subtracts */
+.tap-tile{
+  position:relative; width:100%; height:100%; min-height:248px;
+  display:flex; flex-direction:column; border-radius:18px; overflow:hidden;
+  cursor:pointer; touch-action:none;
+  box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.08);
+}
+.tap-half{ flex:1; display:flex; align-items:center; justify-content:center; gap:8px; transition:background .18s; position:relative; }
+.tap-half.top{ flex-direction:column; justify-content:flex-start; padding-top:16px; }
+.tap-half.bottom{ flex-direction:column; justify-content:flex-end; padding-bottom:16px; background:rgba(0,0,0,.05); }
+.tap-half.top.on{ background:rgba(0,0,0,.12); }
+.tap-half.bottom.on{ background:rgba(0,0,0,.16); }
+.tap-half + .tap-half{ border-top:2px dashed rgba(0,0,0,.18); }
+.tap-mark{ color:rgba(0,0,0,.32); font-family:var(--font-rounded); font-weight:900; font-size:1.15rem; line-height:1; }
+.tap-half.top .tap-mark{ animation:bobUp 1.8s var(--ease) infinite; }
+.tap-half.bottom .tap-mark{ animation:bobDown 1.8s var(--ease) infinite; }
+.tap-hint{ font-size:.6rem; font-weight:800; letter-spacing:.16em; color:rgba(0,0,0,.45); }
+.tap-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; }
+.tap-ripple{ position:absolute; width:14px; height:14px; border-radius:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,.22); animation:ripple .6s var(--ease) forwards; pointer-events:none; }
+.tap-ripple.bottom{ background:rgba(179,0,15,.28); }
+@keyframes ripple{ 0%{opacity:.9; transform:translate(-50%,-50%) scale(.4)} 100%{opacity:0; transform:translate(-50%,-50%) scale(9)} }
+
+/* swipe */
+.swipe-pad{ position:relative; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:grab; }
+.swipe-pad.grab{ cursor:grabbing; }
+.tile.bare{ pointer-events:none; }
+.swipe-chev{ color:rgba(0,0,0,.28); font-size:1.1rem; line-height:1; }
+.swipe-chev.up{ margin-bottom:10px; animation:bobUp 1.6s var(--ease) infinite; }
+.swipe-chev.down{ margin-top:10px; animation:bobDown 1.6s var(--ease) infinite; }
+@keyframes bobUp{ 0%,100%{transform:translateY(0);opacity:.4} 50%{transform:translateY(-5px);opacity:.8} }
+@keyframes bobDown{ 0%,100%{transform:translateY(0);opacity:.4} 50%{transform:translateY(5px);opacity:.8} }
+.swipe-delta{ position:absolute; right:18px; top:50%; transform:translateY(-50%); font-family:var(--font-rounded); font-weight:900; font-size:2rem; }
+.swipe-delta.pos{ color:#0c0c0d; } .swipe-delta.neg{ color:#b3000f; }
+.swipe-thumb{ position:absolute; left:50%; bottom:8px; pointer-events:none; transition:opacity .3s; }
+
+/* dial */
+.dial-prev,.dial-total{ text-align:center; line-height:1; }
+.dial-prev b,.dial-total b{ font-family:var(--font-rounded); font-weight:900; font-size:1.7rem; color:#0c0c0d; display:block; }
+.dial-prev span,.dial-total span{ font-size:.6rem; font-weight:800; letter-spacing:.16em; color:var(--gold-muted); }
+.dial-prev{ margin-bottom:6px; }
+.dial-total{ margin-top:6px; }
+.dial-wrap{ position:relative; cursor:grab; touch-action:none; }
+.dial-wrap.grab{ cursor:grabbing; }
+.dial-ring{ position:relative; width:196px; height:196px; border-radius:50%; background:var(--ring); box-shadow:inset 0 2px 12px rgba(0,0,0,.55); }
+.dial-ticks{ position:absolute; inset:0; transform-origin:center; transition:transform .12s var(--ease); }
+.dial-tick{ position:absolute; left:50%; top:50%; width:3px; height:9px; border-radius:3px; background:rgba(150,142,108,.75); }
+.dial-tick.long{ width:4px; height:16px; background:rgba(205,196,156,.95); }
+.dial-pointer{ position:absolute; left:50%; top:7px; transform:translateX(-50%); width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:11px solid var(--yellow); z-index:4; filter:drop-shadow(0 1px 2px rgba(0,0,0,.55)); }
+.dial-core{ position:absolute; inset:19%; border-radius:50%; background:var(--yellow); display:grid; place-items:center; box-shadow:inset 0 6px 16px rgba(0,0,0,.16); }
+.dial-val{ font-family:var(--font-rounded); font-weight:900; font-size:2.7rem; color:#0c0c0d; line-height:.9; letter-spacing:-.02em; }
+.dial-cap{ font-size:.56rem; font-weight:800; letter-spacing:.14em; color:var(--gold-muted); margin-top:5px; text-align:center; white-space:nowrap; }
+.dial-rot{ position:absolute; color:rgba(0,0,0,.45); font-size:1.05rem; line-height:1; pointer-events:none; }
+.dial-rot.tl{ top:12px; left:6px; animation:dialBobTL 1.5s var(--ease) infinite; }
+.dial-rot.tr{ top:12px; right:6px; animation:dialBobTR 1.5s var(--ease) infinite; }
+@keyframes dialBobTL{ 0%,100%{ transform:rotate(225deg) translateY(0); opacity:.4 } 50%{ transform:rotate(225deg) translateY(-7px); opacity:.9 } }
+@keyframes dialBobTR{ 0%,100%{ transform:rotate(135deg) translateY(0); opacity:.4 } 50%{ transform:rotate(135deg) translateY(-7px); opacity:.9 } }

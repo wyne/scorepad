@@ -1,0 +1,117 @@
+/* ============================================================
+   SCOREPAD — landing page design tokens & base
+   Palette sampled directly from the iOS app.
+   ============================================================ */
+:root{
+  --yellow:      #F5C800;
+  --yellow-2:    #FFD60A;   /* brighter highlight */
+  --yellow-deep: #D9B100;   /* shade / borders */
+  --ink:         #0C0C0D;   /* page background */
+  --ink-2:       #141414;   /* raised surface */
+  --ink-3:       #1C1C1D;   /* card on dark */
+  --navy:        #001423;   /* player-row dark */
+  --ring:        #1E1900;   /* dial dark ring */
+  --ring-tick:   #6B6756;
+  --blue:        #0A84FF;   /* iOS nav blue */
+  --gold-muted:  #8A7000;   /* labels on yellow */
+  --gold-pill:   #6E5A00;
+  --cream:       #FBF4D9;   /* warm light text on dark */
+  --cream-dim:   #B6AE8E;
+  --white:       #FFFFFF;
+
+  --accent: var(--yellow);
+
+  /* player palette (app "original" palette) — used for game cards, history chips, board mockups */
+  --pc-blue:#01497c;
+  --pc-red:#c25858;
+  --pc-yellow:#f5c800;
+  --pc-green:#275436;
+  --pc-orange:#dc902c;
+  --pc-purple:#62516a;
+
+  --maxw: 1200px;
+  --r-sm: 14px;
+  --r-md: 22px;
+  --r-lg: 34px;
+  --r-xl: 48px;
+
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-ui: "Hanken Grotesk", system-ui, sans-serif;
+  --font-rounded: -apple-system, "SF Pro Rounded", "Hanken Grotesk", system-ui, sans-serif;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-back: cubic-bezier(.34,1.56,.64,1);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:var(--font-ui);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+
+/* ---------- shared typography helpers ---------- */
+.display{ font-family:var(--font-display); font-weight:900; line-height:.92; letter-spacing:-.02em; }
+.micro{
+  font-family:var(--font-ui);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:800;
+  font-size:.72rem;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5em;
+  text-transform:uppercase; letter-spacing:.2em; font-weight:800;
+  font-size:.72rem; color:var(--yellow);
+}
+.eyebrow::before{
+  content:""; width:26px; height:2px; background:var(--yellow); border-radius:2px;
+}
+
+/* ---------- layout ---------- */
+.wrap{ width:min(var(--maxw), 92vw); margin-inline:auto; }
+section{ position:relative; }
+
+/* selection */
+::selection{ background:var(--yellow); color:#000; }
+
+/* ---------- buttons ---------- */
+.btn{
+  font-family:var(--font-ui); font-weight:800; font-size:1.02rem;
+  border:none; cursor:pointer; border-radius:999px;
+  padding:1.05em 1.7em; display:inline-flex; align-items:center; gap:.6em;
+  transition:transform .18s var(--ease-back), box-shadow .2s var(--ease), background .2s;
+  line-height:1;
+}
+.btn-primary{ background:var(--yellow); color:#000; box-shadow:0 12px 34px -10px rgba(245,200,0,.6); }
+.btn-primary:hover{ transform:translateY(-3px) scale(1.015); box-shadow:0 20px 44px -12px rgba(245,200,0,.75); }
+.btn-ghost{ background:rgba(255,255,255,.06); color:var(--cream); border:1.5px solid rgba(255,255,255,.16); }
+.btn-ghost:hover{ transform:translateY(-2px); background:rgba(255,255,255,.1); }
+
+/* ---------- reveal on scroll ---------- */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1 !important; transform:none !important; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ---------- App-faithful score screen (used in phone frame) ---------- */
+.app-screen{ font-family:var(--font-rounded); }
+
+/* ---------- nav ---------- */
+.nav{ position:fixed; top:0; left:0; right:0; z-index:50; padding:16px 0; transition:background .3s, border-color .3s, padding .3s; border-bottom:1.5px solid transparent; }
+.nav.solid{ background:rgba(12,12,13,.82); backdrop-filter:blur(16px); border-bottom-color:rgba(255,255,255,.08); padding:10px 0; }
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-links{ display:flex; gap:30px; margin-left:auto; }
+.nav-links a{ font-weight:700; color:var(--cream-dim); font-size:.98rem; transition:color .15s; white-space:nowrap; }
+.nav-links a:hover{ color:var(--yellow); }
+.nav-cta{ padding:.7em 1.25em; font-size:.94rem; white-space:nowrap; }
+@media (max-width:760px){ .nav-links{ display:none; } .nav-inner{ justify-content:space-between; } }
