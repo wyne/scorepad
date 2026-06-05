@@ -95,6 +95,13 @@
 .cta p{ font-size:1.18rem; color:var(--cream-dim); margin:20px 0 0; }
 .cta .badge-row{ justify-content:center; margin-top:34px; }
 
+/* buy-me-a-coffee */
+.bmc-wrap{ margin-top:52px; padding-top:40px; border-top:1.5px solid rgba(255,255,255,.07); display:flex; flex-direction:column; align-items:center; gap:18px; }
+.bmc-note{ font-size:.96rem; color:var(--cream-dim); max-width:40ch; line-height:1.6; margin:0; }
+.bmc-btn{ display:inline-flex; align-items:center; gap:10px; background:var(--yellow); color:#0c0c0d; font-family:var(--font-ui); font-weight:800; font-size:1rem; padding:13px 26px; border-radius:999px; text-decoration:none; transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s; box-shadow:0 6px 24px -6px rgba(245,200,0,.45); }
+.bmc-btn:hover{ transform:translateY(-2px) scale(1.03); box-shadow:0 12px 32px -6px rgba(245,200,0,.6); background:var(--yellow-2); }
+.bmc-btn:active{ transform:scale(.97); }
+
 /* ================= footer ================= */
 .footer{ border-top:1.5px solid rgba(255,255,255,.08); padding:64px 0 40px; }
 .foot-grid{ display:grid; grid-template-columns:1.4fr 2fr; gap:40px; }
