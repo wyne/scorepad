@@ -213,7 +213,7 @@ function GamesFeature(){
 /* ---- final CTA ---- */
 function FinalCTA(){
   return (
-    <section className="sec cta">
+    <section className="sec cta" id="support">
       <div className="wrap cta-inner reveal">
         <img className="cta-icon" src="assets/app-icon.webp" alt="Scorepad app icon" width="96" height="96"/>
         <h2 className="display cta-h2">Score your next<br/>game with a flick.</h2>
