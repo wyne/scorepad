@@ -110,9 +110,7 @@ function HeroSplit({ phone }) {
         <div className="hero-art">
           <div className="hero-glow"></div>
           <div className="phone-float">
-            <PhoneFrame width={300}>
-              <PhoneContent variant={phone} />
-            </PhoneFrame>
+            <Device width={300} src="assets/screens/iphone-board-dark.webp" alt="Scorepad game board with four players" eager />
           </div>
           <div className="chip chip-1">No keyboard</div>
           <div className="chip chip-2">Tap · Swipe · Spin</div>
